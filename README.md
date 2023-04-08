@@ -47,6 +47,8 @@
 
 **2020-11-01, 2020-11-02, 2020-11-03, 2020-11-04.**
 
+Минимум можно сделать только на одну дату **2020-11-01**.
+
 1. **Витрина** _corporate_payments_. Строится по каждому уникальному счету (AccountDB  и AccountCR) из таблицы Operation. Ключ партиции CutoffDt
 
     |Поле|Описание|
@@ -100,9 +102,49 @@
 
 **Источник:** https://disk.yandex.ru/d/OlYnCPLK4XfHVA
 
-По итогу должно получиться 3 витрины с 4 днями. Каждая витрина – один паркет. Паркетники, как и код необходимо выложить на гитхаб. Технологический стек – sql, scala. Если спарк будет работать медленно – данные необходимо уменьшить. 
+По итогу должно получиться 3 витрины с 4 днями. Каждая витрина – один паркет. Паркетники, как и код необходимо выложить на гитхаб. Технологический стек – sql, scala, python. Если спарк будет работать медленно – данные необходимо уменьшить.
+
+## План реализации
+
+### Используемые технологии
+Технологический стек – Apache Spark 3.3.1, Python 3.10, PostgreSQL 14.2.
+
+В качестве файловой системы используется обычная файловая система хостовой машины.
+
+### Схема
+
+![Diagram1](./images/diagram.drawio.png)
+
+### Настройка и запуск
+
+#### PostgreSQL
+
+PostgreSQL запускается с помощью [docker-compose.yml](./postgres/docker-compose.yml)
+
+## Результаты разработки
+В результате был создан проект со следующей структурой:
+```bash
+.
+├── data                       # data files
+├── docs                       # documentation
+├── images                     # screenshots
+├── jars                       # jar files
+├── postgres                   # postgres scripts
+├── project.ipynb              # jupyter notebook
+└── README.md
+```
+
+<details>
+  <summary>Примеры витрин данных</summary>
+
+1. Витрина corporate_payments
+![data_mart](./images/data_mart1.png)
+
+2. Витрина corporate_account
+![data_mart](./images/data_mart2.png)
+
+2. Витрина corporate_info
+![data_mart](./images/data_mart3.png)
 
 
-
-
-
+</details>
