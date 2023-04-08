@@ -136,6 +136,7 @@ PostgreSQL запускается с помощью [docker-compose.yml](./postg
 ├── images                     # screenshots
 ├── jars                       # jar files
 ├── postgres                   # postgres scripts
+├── src                        # python scripts
 ├── project.ipynb              # jupyter notebook
 └── README.md
 ```
