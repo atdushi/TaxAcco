@@ -128,6 +128,10 @@
 
 ### Настройка и запуск
 
+#### Delta lake
+
+Используется версия pyspark==3.3.1 и delta-spark==2.3.0
+
 #### PostgreSQL
 
 PostgreSQL запускается с помощью [docker-compose.yml](./postgres/docker-compose.yml)
