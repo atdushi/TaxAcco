@@ -145,13 +145,16 @@ PostgreSQL запускается с помощью [docker-compose.yml](./postg
   <summary>Примеры витрин данных</summary>
 
 1. Витрина corporate_payments
-![data_mart](./images/data_mart1.png)
+
+    ![data_mart](./images/data_mart1.png)
 
 2. Витрина corporate_account
-![data_mart](./images/data_mart2.png)
+
+    ![data_mart](./images/data_mart2.png)
 
 2. Витрина corporate_info
-![data_mart](./images/data_mart3.png)
+
+    ![data_mart](./images/data_mart3.png)
 
 
 </details>
