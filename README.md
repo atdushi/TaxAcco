@@ -128,13 +128,30 @@
 
 ### Настройка и запуск
 
+Для запуска используйте команду
+```bash
+make up-build
+```
+После выполнения предыдущей команды в терминале должна появиться ссылка на jupyter ноутбук
+
+![notebook](./images/token.png)
+
+Чтобы появилась эта ссылка, можно отдельно выполнить команду
+```bash
+make get-jupyter-token
+```
+
+Перейдите по данной ссылке в папку work и откройте project.ipynb
+
+![notebook](./images/notebook.png)
+
 #### Delta lake
 
 Используется версия pyspark==3.3.1 и delta-spark==2.3.0
 
 #### PostgreSQL
 
-PostgreSQL запускается с помощью [docker-compose.yml](./postgres/docker-compose.yml)
+PostgreSQL запускается с помощью [docker-compose.yml](./docker-compose.yml)
 
 ## Результаты разработки
 В результате был создан проект со следующей структурой:
@@ -144,9 +161,9 @@ PostgreSQL запускается с помощью [docker-compose.yml](./postg
 ├── docs                       # documentation
 ├── images                     # screenshots
 ├── jars                       # jar files
+├── jupyter-local              # jupyter notebook
 ├── postgres                   # postgres scripts
 ├── src                        # python scripts
-├── project.ipynb              # jupyter notebook
 └── README.md
 ```
 

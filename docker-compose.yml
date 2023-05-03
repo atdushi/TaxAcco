@@ -1,0 +1,33 @@
+services:
+    postgres:
+        image: postgres:14.2
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+            #- ./postgres/pg_data:/var/lib/postgresql/data/
+        # env_file:
+        #     - .env
+        environment:
+            - POSTGRES_PASSWORD=myPassword
+        # restart: always
+    jupyter-local:
+        build: ./jupyter-local
+        ports:
+        - 8888:8888
+        - 4040:4040
+        - 4041:4041
+        links:
+        - postgres
+        volumes:
+        - ./jupyter-local/notebooks:/home/jovyan/work
+        - ./src:/home/jovyan/work/src
+        - ./jars:/home/jovyan/work/jars
+        - ./data:/home/jovyan/work/data
+
+    # adminer:
+    #     image: adminer
+    #     ports:
+    #         - "8080:8080"
+    #     restart: always
+
