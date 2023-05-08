@@ -6,10 +6,8 @@ services:
         volumes:
             - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
             #- ./postgres/pg_data:/var/lib/postgresql/data/
-        # env_file:
-        #     - .env
-        environment:
-            - POSTGRES_PASSWORD=myPassword
+        env_file:
+             - .env
         # restart: always
     jupyter-local:
         build: ./jupyter-local
@@ -24,6 +22,12 @@ services:
         - ./src:/home/jovyan/work/src
         - ./jars:/home/jovyan/work/jars
         - ./data:/home/jovyan/work/data
+    vertica:
+        image: dataplatform/docker-vertica
+        ports:
+            - 5433:5433
+        volumes:
+            - ./data/:/tmp/input
 
     # adminer:
     #     image: adminer
