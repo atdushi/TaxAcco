@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f ./src/main/requirements.txt ]; then pip install -r ./src/main/requirements.txt; fi
         pip install -r ./src/tests/test-requirements.txt              
     - name: Run Unit Tests
       run: |
