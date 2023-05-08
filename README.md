@@ -145,6 +145,10 @@ make get-jupyter-token
 
 ![notebook](./images/notebook.png)
 
+#### Vertica
+
+Данные могут грузиться как из CSV файлов, так и из Vertica. Для настройки последней необходимо запустить скрипт [init.sql](./vertica/init.sql)
+
 #### Delta lake
 
 Используется версия pyspark==3.3.1 и delta-spark==2.3.0
@@ -164,6 +168,7 @@ PostgreSQL запускается с помощью [docker-compose.yml](./docke
 ├── jupyter-local              # jupyter notebook
 ├── postgres                   # postgres scripts
 ├── src                        # python scripts
+├── vertica                    # vertica scripts
 └── README.md
 ```
 
