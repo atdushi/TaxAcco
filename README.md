@@ -118,7 +118,7 @@
 ## План реализации
 
 ### Используемые технологии
-Технологический стек – Apache Spark 3.3.1, Python 3.10, PostgreSQL 14.2, Vertica Analytic Database v9.0.0-0.
+Технологический стек – Apache Spark 3.3.1, Python 3.10, PostgreSQL 14.2, Vertica Analytic Database v9.0.0-0, Presto server 0.280.
 
 В качестве файловой системы используется обычная файловая система хостовой машины.
 
@@ -156,6 +156,32 @@ make get-jupyter-token
 #### PostgreSQL
 
 PostgreSQL запускается с помощью [docker-compose.yml](./docker-compose.yml)
+
+### Presto
+
+Просмотреть содержимое таблиц из Postgres можно с помощью Presto. Для установки сервера и коннектора будем следовать инструкциям
+
+https://prestodb.io/docs/current/installation.html
+https://prestodb.io/docs/current/connector/postgresql.html
+
+Или просто скачаем сервер и клиент
+[presto-server-0.280.tar.gz](https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.280/presto-server-0.280.tar.gz)
+[presto-cli-0.280-executable.jar](https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.280/presto-cli-0.280-executable.jar)
+
+Распакуем tar файл, скопируем туда содержимое каталога [etc](./presto). Затем переименуем presto-cli-0.280-executable.jar в presto, установим флаг chmod +x и запустим
+
+```bash
+./bin/launcher start
+./presto --server localhost:8080
+
+presto> SHOW SCHEMAS FROM postgresql;
+presto> SHOW TABLES FROM postgresql.de_sprint;
+presto> SELECT * FROM postgresql.de_sprint.lists;
+
+./bin/launcher stop 
+```
+
+![presto result](./images/presto_result.png)
 
 ## Результаты разработки
 В результате был создан проект со следующей структурой:
