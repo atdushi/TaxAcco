@@ -161,8 +161,9 @@ PostgreSQL запускается с помощью [docker-compose.yml](./docke
 
 Просмотреть содержимое таблиц из Postgres можно с помощью Presto. Для установки сервера и коннектора будем следовать инструкциям
 
-https://prestodb.io/docs/current/installation.html
-https://prestodb.io/docs/current/connector/postgresql.html
+1. https://prestodb.io/docs/current/installation.html
+
+2. https://prestodb.io/docs/current/connector/postgresql.html
 
 Или просто скачаем сервер и клиент
 [presto-server-0.280.tar.gz](https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.280/presto-server-0.280.tar.gz)
