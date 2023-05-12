@@ -193,6 +193,7 @@ presto> SELECT * FROM postgresql.de_sprint.lists;
 ├── jars                       # jar files
 ├── jupyter-local              # jupyter notebook
 ├── postgres                   # postgres scripts
+├── presto                     # presto scripts
 ├── src                        # python scripts
 ├── vertica                    # vertica scripts
 └── README.md
