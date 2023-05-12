@@ -165,11 +165,10 @@ PostgreSQL запускается с помощью [docker-compose.yml](./docke
 
 2. https://prestodb.io/docs/current/connector/postgresql.html
 
-Или просто скачаем сервер и клиент
-[presto-server-0.280.tar.gz](https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.280/presto-server-0.280.tar.gz)
+Или просто скачаем сервер [presto-server-0.280.tar.gz](https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.280/presto-server-0.280.tar.gz) и клиент
 [presto-cli-0.280-executable.jar](https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.280/presto-cli-0.280-executable.jar)
 
-Распакуем tar файл, скопируем туда содержимое каталога [etc](./presto). Затем переименуем presto-cli-0.280-executable.jar в presto, установим флаг chmod +x и запустим
+Распакуем tar файл сервера, скопируем туда содержимое каталога [etc](./presto). Затем переименуем presto-cli-0.280-executable.jar в presto, установим флаг chmod +x и запустим
 
 ```bash
 ./bin/launcher start
